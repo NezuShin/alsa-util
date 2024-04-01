@@ -1,0 +1,16 @@
+{
+  "name": "alsa-util",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "NezuShin",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.9.4"
+  }
+}
