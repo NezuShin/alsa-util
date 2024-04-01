@@ -33,7 +33,7 @@ class ALSAPlayer extends ProcessRunner {
     private streams: ALSAWritableStream[] = [];
 
     protected spawnProcess(): ChildProcessWithoutNullStreams {
-        return spawn('aplay', ['-D', this.options.device, '-r', `${this.options.sampleRate}`, '-f', this.options.bitDepth, '-c', `${this.options.channels}`]);
+        return spawn('aplay', ['-D', this.options.device, '-r', `${this.options.sampleRate}`, '-f', this.options.sampleFormat, '-c', `${this.options.channels}`]);
     }
 
     public createStream() {

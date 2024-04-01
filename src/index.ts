@@ -48,7 +48,7 @@ enum SampleFormat {//taken from https://linux.die.net/man/1/aplay
 interface ALSAPlayerOptions {
     device: string,
     channels: number,
-    bitDepth: SampleFormat,
+    sampleFormat: SampleFormat,
     sampleRate: number,
     debug?: boolean
 }

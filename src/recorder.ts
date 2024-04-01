@@ -18,7 +18,7 @@ class ALSARecorder extends ProcessRunner {
     private streams: ALSAReadableStream[] = [];
 
     protected spawnProcess(): ChildProcessWithoutNullStreams {
-        let process = spawn('arecord', ['-D', this.options.device, '-r', `${this.options.sampleRate}`, '-f', this.options.bitDepth, '-c', `${this.options.channels}`, `-q`]);
+        let process = spawn('arecord', ['-D', this.options.device, '-r', `${this.options.sampleRate}`, '-f', this.options.sampleFormat, '-c', `${this.options.channels}`, `-q`]);
 
         process.stdout.on('data', this.onData.bind(this));
 
