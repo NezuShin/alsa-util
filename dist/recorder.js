@@ -18,7 +18,7 @@ class ALSARecorder extends index_1.ProcessRunner {
         this.streams = [];
     }
     spawnProcess() {
-        let process = (0, child_process_1.spawn)('arecord', ['-D', this.options.device, '-r', `${this.options.sampleRate}`, '-f', this.options.bitDepth, '-c', `${this.options.channels}`, `-q`]);
+        let process = (0, child_process_1.spawn)('arecord', ['-D', this.options.device, '-r', `${this.options.sampleRate}`, '-f', this.options.sampleFormat, '-c', `${this.options.channels}`, `-q`]);
         process.stdout.on('data', this.onData.bind(this));
         return process;
     }

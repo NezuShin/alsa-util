@@ -47,7 +47,7 @@ declare enum SampleFormat {
 interface ALSAPlayerOptions {
     device: string;
     channels: number;
-    bitDepth: SampleFormat;
+    sampleFormat: SampleFormat;
     sampleRate: number;
     debug?: boolean;
 }

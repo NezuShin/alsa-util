@@ -21,8 +21,12 @@ class ALSAWritableStream extends Writable {
             callback(new Error(`Written chunk is not "Buffer" type`));
             return;
         }
-        this.player.write(chunk);
-        callback(null);
+        this.player.write(chunk).then(() => {
+            callback(null);
+        }).catch(err => {
+            callback(err);
+        });
+
     }
 }
 

@@ -18,8 +18,11 @@ class ALSAWritableStream extends stream_1.Writable {
             callback(new Error(`Written chunk is not "Buffer" type`));
             return;
         }
-        this.player.write(chunk);
-        callback(null);
+        this.player.write(chunk).then(() => {
+            callback(null);
+        }).catch(err => {
+            callback(err);
+        });
     }
 }
 exports.ALSAWritableStream = ALSAWritableStream;
@@ -29,7 +32,7 @@ class ALSAPlayer extends index_1.ProcessRunner {
         this.streams = [];
     }
     spawnProcess() {
-        return (0, child_process_1.spawn)('aplay', ['-D', this.options.device, '-r', `${this.options.sampleRate}`, '-f', this.options.bitDepth, '-c', `${this.options.channels}`]);
+        return (0, child_process_1.spawn)('aplay', ['-D', this.options.device, '-r', `${this.options.sampleRate}`, '-f', this.options.sampleFormat, '-c', `${this.options.channels}`]);
     }
     createStream() {
         let stream = new ALSAWritableStream(this);
