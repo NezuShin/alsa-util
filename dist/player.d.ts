@@ -2,8 +2,8 @@
 /// <reference types="node" />
 /// <reference types="node" />
 import { ChildProcessWithoutNullStreams } from "child_process";
-import { ProcessRunner } from "./index";
 import { Writable } from 'stream';
+import { ProcessRunner } from "./runner";
 declare class ALSAWritableStream extends Writable {
     private player;
     constructor(player: ALSAPlayer);

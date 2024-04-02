@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ALSAReadableStream = exports.ALSARecorder = void 0;
 const child_process_1 = require("child_process");
-const index_1 = require("./index");
 const stream_1 = require("stream");
+const runner_1 = require("./runner");
 class ALSAReadableStream extends stream_1.Readable {
     constructor() {
         super();
@@ -12,7 +12,7 @@ class ALSAReadableStream extends stream_1.Readable {
     }
 }
 exports.ALSAReadableStream = ALSAReadableStream;
-class ALSARecorder extends index_1.ProcessRunner {
+class ALSARecorder extends runner_1.ProcessRunner {
     constructor() {
         super(...arguments);
         this.streams = [];

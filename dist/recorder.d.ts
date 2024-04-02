@@ -1,8 +1,8 @@
 /// <reference types="node" />
 /// <reference types="node" />
 import { ChildProcessWithoutNullStreams } from "child_process";
-import { ProcessRunner } from "./index";
 import { Readable } from 'stream';
+import { ProcessRunner } from "./runner";
 declare class ALSAReadableStream extends Readable {
     constructor();
     _read(size: number): void;

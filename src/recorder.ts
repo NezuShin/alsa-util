@@ -1,6 +1,6 @@
 import { ChildProcessWithoutNullStreams, spawn } from "child_process";
-import { ProcessRunner } from "./index";
 import { Readable } from 'stream';
+import { ProcessRunner } from "./runner";
 
 class ALSAReadableStream extends Readable {
 
